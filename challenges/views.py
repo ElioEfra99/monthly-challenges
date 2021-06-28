@@ -20,26 +20,20 @@ month_challenges = {
 
 def index(request):
     months = list(month_challenges.keys())
-    list_items = ''
+    context = {
+        'months': months
+    }
 
-    for month in months:
-        capitalized_month = month.capitalize()
-        month_path = reverse('month-challenge', args=[month])
-        list_items += f'<li><a href="{month_path}">{capitalized_month}</a></li>\n'
-
-    response_data = f'<ul>{list_items}</ul>'
-
-    return HttpResponse(response_data)
+    return render(request, 'challenges/index.html', context)
 
 
 def monthly_challenge(request, month):
     try:
         challenge_text = month_challenges[month]
-        capitalized_month = month.capitalize()
         
         context = {
             'text': challenge_text,
-            'month_name': capitalized_month,
+            'month_name': month,
         }
 
         # response_data = render_to_string('challenges/challenge.html')
