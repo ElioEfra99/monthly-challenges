@@ -15,7 +15,7 @@ month_challenges = {
     'september': 'Eat no meat for the entire month',
     'october': 'Eat no meat for the entire month',
     'november': 'Eat no meat for the entire month',
-    'december': 'Eat no meat for the entire month',
+    'december': None,
 }
 
 def index(request):
