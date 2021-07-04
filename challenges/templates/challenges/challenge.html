@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block page_title %}  {{ month_name|title }} Challenge {% endblock page_title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'challenges/shared/nav.css' %}">
+{% endblock css_files %}
 
 {% block content %}
 
