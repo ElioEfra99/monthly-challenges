@@ -7,10 +7,14 @@
 {% endblock page_title %}
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static 'challenges/challenges.css' %}">
+    <link rel="stylesheet" href="{% static 'challenges/index.css' %}">
+    <link rel="stylesheet" href="{% static 'challenges/shared/nav.css' %}">
 {% endblock css_files %}
 
 {% block content %}
+
+    {% include 'challenges/shared/nav.html' %}
+
     <ul>
         {% for month in months %}
             <li><a href="{% url 'month-challenge' month=month %}"> {{ month|title }} </a></li>
